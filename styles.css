@@ -111,6 +111,37 @@ nav a:hover { color: var(--accent); }
 .site-footer { border-top: 1px solid var(--line); padding: 1.6rem 0; text-align: center; }
 .site-footer p { color: var(--muted); font-size: 0.85rem; }
 
+/* Audiobooks */
+.section-lede { text-align: center; color: var(--muted); max-width: 640px; margin: -1rem auto 2.2rem; }
+.audio-list { display: grid; gap: 1.2rem; max-width: 720px; margin: 0 auto; }
+.audio-item {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 1.4rem 1.6rem;
+}
+.audio-item h4 { font-size: 1.2rem; font-weight: 400; margin-bottom: 0.2rem; }
+.audio-item .series-tag { margin-bottom: 1rem; }
+.audio-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.link-btn {
+  display: inline-block; padding: 0.55rem 1.35rem;
+  border: 1px solid var(--accent); color: var(--accent); text-decoration: none;
+  border-radius: 999px; font-size: 0.9rem; letter-spacing: 0.03em;
+}
+.link-btn:hover { background: var(--accent); color: #1a1206; }
+.link-btn.solid { background: var(--accent); color: #1a1206; }
+.link-btn.solid:hover { background: #f4bc66; }
+.promo-note { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 0.9rem; }
+
+/* Coming soon blurbs */
+.book-card .blurb summary { cursor: pointer; list-style: none; }
+.book-card .blurb summary::-webkit-details-marker { display: none; }
+.tap-hint {
+  display: inline-block; color: var(--accent);
+  font-size: 0.8rem; font-style: italic; margin: 0.4rem 0 0.6rem;
+}
+.blurb[open] .tap-hint { display: none; }
+.blurb-body { text-align: left; padding: 0.4rem 1.2rem 0.6rem; }
+.blurb-body p { font-size: 0.92rem; color: #ddd3bf; margin-bottom: 0.9rem; }
+
 @media (max-width: 600px) {
   nav a { margin-left: 0.9rem; font-size: 0.82rem; }
   .hero { padding: 3.5rem 0 3rem; }
