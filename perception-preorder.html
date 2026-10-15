@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Order Perception — SarahMae Stephens</title>
+  <meta name="description" content="Pre-order Perception, Book One of the Parallax Series by SarahMae Stephens. $4.99 eBook pre-order — EPUB delivered by email on release day.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .preorder-hero { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+    .preorder-hero img { width: 280px; max-width: 60vw; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+    .preorder-hero .hook { font-size: 1.25rem; font-style: italic; margin: .75rem 0; }
+    .price { font-size: 2rem; font-weight: bold; margin: .5rem 0; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; margin: 1rem 0; padding-left: 3rem; position: relative; }
+    .steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--accent); color: #1a1206; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+    .form-embed { width: 100%; max-width: 700px; height: 1200px; border: 0; margin-top: 1rem; }
+    .note { font-size: .95rem; opacity: .85; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">SarahMae Stephens</a>
+      <nav>
+        <a href="index.html#books">Books</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap preorder-hero">
+        <img src="assets/perception.jpg" alt="Perception book cover">
+        <div>
+          <p class="kicker">Pre-Order Now</p>
+          <h1>Perception</h1>
+          <p class="lede">Book One of the Parallax Series</p>
+          <p class="hook">One discovery. Two worlds. A war neither side can afford to lose.</p>
+          <p class="price">$4.99 <span class="note">eBook pre-order</span></p>
+          <div class="cta-row">
+            <a class="btn" href="https://www.paypal.com/ncp/payment/GKKMKNHT27UKG" target="_blank" rel="noopener">Pre-order with PayPal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <h2>How pre-ordering works</h2>
+        <ol class="steps">
+          <li><strong>Pay $4.99</strong> with the PayPal button above — that reserves your copy.</li>
+          <li><strong>Fill out the signup form below</strong> with the email where you want your book delivered. Double-check it — that's your delivery address on release day. A backup email is welcome.</li>
+          <li><strong>Get your EPUB by email</strong> the moment <em>Perception</em> releases. No stores, no waiting rooms.</li>
+        </ol>
+        <p class="note">Prefer to just follow along? Choose the free signup option in the form and you'll get launch updates instead — no book, no charge.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap narrow">
+        <h2>Reserve your copy</h2>
+        <p class="section-lede">Paid pre-order ($4.99) or free signup — your choice in the form.</p>
+        <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSeDMAzUbJu6hnFHexzMW0RaVoRHpkEP34lNazbwpTiG_sGYkg/viewform?embedded=true" title="Perception pre-order signup form">Loading…</iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 SarahMae Stephens. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
