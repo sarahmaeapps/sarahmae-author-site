@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akanwowapi — Writing Desk for Windows | SarahMae Stephens</title>
+  <meta name="description" content="Akanwowapi is a free Windows writing desk for novelists, built by author SarahMae Stephens for her own books. Tabbed chapters, Word built in, auto-save, per-chapter notes, and a Muse side panel.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .app-hero { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+    .app-hero img { width: 220px; max-width: 55vw; border-radius: 12px; border: 1px solid var(--line); }
+    .app-hero .hook { font-size: 1.25rem; font-style: italic; margin: .75rem 0; }
+    .feature-list { display: grid; gap: 1.2rem; max-width: 720px; margin: 0 auto; }
+    .feature-list .audio-item p { margin-bottom: 0; }
+    .req-list { list-style: none; padding: 0; }
+    .req-list li { padding: 0.55rem 0 0.55rem 1.6rem; position: relative; border-bottom: 1px solid var(--line); }
+    .req-list li:last-child { border-bottom: none; }
+    .req-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--accent); }
+    .license-note { text-align: center; color: var(--muted); font-style: italic; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">SarahMae Stephens</a>
+      <nav>
+        <a href="index.html#books">Books</a>
+        <a href="index.html#audiobooks">Audiobooks</a>
+        <a href="index.html#coming-soon">Coming Soon</a>
+        <a href="index.html#windows-development">Windows Development</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap app-hero">
+        <img src="assets/akanwowapi-icon.png" alt="Akanwowapi Writing Desk app icon — a quill and lattice">
+        <div>
+          <p class="kicker">Windows Development &mdash; Free</p>
+          <h1>Akanwowapi</h1>
+          <p class="lede">The Writing Desk</p>
+          <p class="hook">A Windows app for novelists, built by Sarah for her own books.</p>
+          <p class="lede">Your chapters, your notes, and your AI assistant &mdash; all in one desk, the way Sarah writes the Project Parallax series.</p>
+          <div class="cta-row">
+            <a class="btn" href="downloads/Akanwowapi%20Setup%20Ver-11.15.26.1419.EXE">Download for Windows</a><!-- Installer hosted on this site; version 11.15.26.1419 -->
+          </div>
+          <p class="license-note">Free to use under the included license.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap">
+        <h2>What it does</h2>
+        <div class="feature-list">
+          <article class="audio-item">
+            <h4>Chapter file tree</h4>
+            <p>Your manuscript's chapters laid out as a file tree &mdash; .docx files only, so what you see is what Word opens.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Tabbed chapters</h4>
+            <p>Open chapters in tabs, drag them into the order you like, and rename a tab with a double-click.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Microsoft Word, built in</h4>
+            <p>Word runs embedded right inside the app, so you keep the ribbon, the formatting, and the tools you already know.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Auto-save</h4>
+            <p>Your work saves itself as you write &mdash; no lost chapters, no remembering to hit save.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Per-chapter notes</h4>
+            <p>Every chapter keeps its own notes, right beside the text they belong to.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Muse side panel</h4>
+            <p>Your Muse assistant lives in a panel beside your manuscript, ready when you need a second pair of eyes.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Light and dark themes</h4>
+            <p>Nine light themes and nine dark themes, with a &ldquo;Lets go dark&rdquo; switch for late-night writing sessions.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Folder-style tabs</h4>
+            <p>Rounded tabs shaped like file folders, so your desk feels like a desk.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <h2>System requirements</h2>
+        <ul class="req-list">
+          <li>Windows 10 or 11 (64-bit)</li>
+          <li>Microsoft Word, desktop version</li>
+          <li>.NET Desktop Runtime 10</li>
+          <li>A Muse account, for the side panel</li>
+        </ul>
+        <p class="license-note">Free to use under the included license.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 SarahMae Stephens. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
