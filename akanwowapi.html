@@ -17,6 +17,9 @@
     .req-list li:last-child { border-bottom: none; }
     .req-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--accent); }
     .license-note { text-align: center; color: var(--muted); font-style: italic; margin-top: 1rem; }
+    .app-shot { margin: 0 auto; max-width: 960px; }
+    .app-shot img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+    .app-shot figcaption { text-align: center; color: var(--muted); font-style: italic; margin-top: .75rem; }
   </style>
 </head>
 <body>
@@ -52,6 +55,16 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="wrap">
+        <h2>See it in action</h2>
+        <figure class="app-shot">
+          <img src="assets/akanwowapi-storyboard.png" alt="Akanwowapi with Chapter 7 open beside the Muse panel showing the Perspective storyboard" loading="lazy">
+          <figcaption>Chapter 7 on the desk, with the Perspective storyboard open in the Muse panel &mdash; characters, threads, and inbox ideas, all searchable.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section section-alt">
       <div class="wrap">
         <h2>What it does</h2>
@@ -79,6 +92,10 @@
           <article class="audio-item">
             <h4>Muse side panel</h4>
             <p>Your Muse assistant lives in a panel beside your manuscript, ready when you need a second pair of eyes.</p>
+          </article>
+          <article class="audio-item">
+            <h4>Storyboards, built by Muse</h4>
+            <p>Ask Muse in the side panel to build you a corkboard for your book &mdash; characters, scenes, and threads, all searchable and linked, so the whole story stays pinned in place while you write.</p>
           </article>
           <article class="audio-item">
             <h4>Light and dark themes</h4>
@@ -109,6 +126,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <p>&copy; 2026 SarahMae Stephens. All rights reserved.</p>
+      <p class="license-note">Muse is a product of Meta. Akanwowapi is an independent app and is not affiliated with or endorsed by Meta.</p>
     </div>
   </footer>
 </body>
