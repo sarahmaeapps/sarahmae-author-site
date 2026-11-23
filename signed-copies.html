@@ -14,18 +14,25 @@
       GodFire — Paperback $11.99, Hardcover $19.99
       The Dacturian Princess (2nd Ed.) — Paperback $14.99, Hardcover $19.99
       Perception — Paperback $14.99, Hardcover $19.99 (pre-order, ships after Dec 15, 2026)
-    All five have hardcovers at $19.99 (confirmed from KDP — the four older titles
-    DO have hardcover editions). This resolves the earlier retailer conflicts:
-    Rescuing the Light $11.99 (not SciFier's $18.62 RRP), Dacturian $14.99 (not $21.49).
-    Perception's prices were not findable anywhere else — these came from KDP.
+    All five have hardcovers at $19.99 (confirmed from KDP). The order form's
+    Format question was fixed Nov 23 (was "Hardcover (Perception only)") — now
+    just Paperback / Hardcover for every title.
+
+    PREFILL — Nov 23, 2026: each card's "Order signed copy" button prefills the
+    embedded order form with that book + the selected format, then scrolls to it.
+    Google Form entry IDs (verified live Nov 23 via the form's prefill flow):
+      "Which book?" dropdown = entry.2133138706
+      "Format" radio group  = entry.1768164836
+    The button sets the iframe src to the prefilled embedded URL and scrolls to
+    the form. If prefill ever stops working, the button still scrolls to the form
+    (href="#order-form" fallback) and the customer picks book/format there.
 
     PAYMENT — form-first flow (not on-site PayPal buttons). The customer orders via
     the embedded Google Form; Sarah confirms the order and emails a PayPal payment
     link (or invoice) for the exact total: book price + exact shipping. The customer
     pays with PayPal, Google Pay, or a card. PayPal buttons were considered but a
     fixed-amount button can't capture the variable shipping (weight/qty/destination),
-    so the exact-total invoice/link is the accurate method. The "Order signed copy"
-    buttons on the cards scroll to the order form.
+    so the exact-total invoice/link is the accurate method.
 
     SHIPPING ESTIMATOR — USPS Media Mail, Notice 123, Oct 4, 2026 rates (verified
     Nov 23, 2026): 1 lb $4.39, 2 lb $5.13, 3 lb $5.86, 4 lb $6.60, 5 lb $7.34, then
@@ -83,59 +90,59 @@
         <p class="section-lede">Each copy is signed and personalized just for you. Tell me who it's for and what it's for in the order form below.</p>
         <div class="signed-grid">
 
-          <article class="signed-card" data-book="A Shadow From the South">
+          <article class="signed-card" data-book="A Shadow From the South" data-form-book="A Shadow From the South (Chronicles of the Fae)">
             <img src="assets/shadow.jpg" alt="A Shadow From the South book cover" loading="lazy">
             <h4>A Shadow From the South</h4>
             <p class="series-tag">Chronicles of the Fae</p>
             <div class="fmt">
-              <label><input type="radio" name="fmt-shadow" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
-              <label><input type="radio" name="fmt-shadow" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+              <label><input type="radio" name="fmt-shadow" value="Paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-shadow" value="Hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
             </div>
-            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+            <p class="price-line"><a class="btn order-btn" href="#order-form">Order signed copy</a></p>
           </article>
 
-          <article class="signed-card" data-book="Rescuing the Light">
+          <article class="signed-card" data-book="Rescuing the Light" data-form-book="Rescuing the Light (Chronicles of the Fae)">
             <img src="assets/rescuing.jpg" alt="Rescuing the Light book cover" loading="lazy">
             <h4>Rescuing the Light</h4>
             <p class="series-tag">Chronicles of the Fae</p>
             <div class="fmt">
-              <label><input type="radio" name="fmt-rescuing" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
-              <label><input type="radio" name="fmt-rescuing" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+              <label><input type="radio" name="fmt-rescuing" value="Paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-rescuing" value="Hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
             </div>
-            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+            <p class="price-line"><a class="btn order-btn" href="#order-form">Order signed copy</a></p>
           </article>
 
-          <article class="signed-card" data-book="GodFire">
+          <article class="signed-card" data-book="GodFire" data-form-book="GodFire (Chronicles of the Fae)">
             <img src="assets/godfire.jpg" alt="GodFire book cover" loading="lazy">
             <h4>GodFire</h4>
             <p class="series-tag">Chronicles of the Fae</p>
             <div class="fmt">
-              <label><input type="radio" name="fmt-godfire" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
-              <label><input type="radio" name="fmt-godfire" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+              <label><input type="radio" name="fmt-godfire" value="Paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-godfire" value="Hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
             </div>
-            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+            <p class="price-line"><a class="btn order-btn" href="#order-form">Order signed copy</a></p>
           </article>
 
-          <article class="signed-card" data-book="The Dacturian Princess">
+          <article class="signed-card" data-book="The Dacturian Princess" data-form-book="The Dacturian Princess (Second Edition)">
             <img src="assets/dacturian.png" alt="The Dacturian Princess book cover" loading="lazy">
             <h4>The Dacturian Princess</h4>
             <p class="series-tag">Second Edition</p>
             <div class="fmt">
-              <label><input type="radio" name="fmt-dacturian" value="paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
-              <label><input type="radio" name="fmt-dacturian" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+              <label><input type="radio" name="fmt-dacturian" value="Paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
+              <label><input type="radio" name="fmt-dacturian" value="Hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
             </div>
-            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+            <p class="price-line"><a class="btn order-btn" href="#order-form">Order signed copy</a></p>
           </article>
 
-          <article class="signed-card" data-book="Perception">
+          <article class="signed-card" data-book="Perception" data-form-book="Perception (Project Parallax, Book 1) — signed pre-order, ships after Dec 15, 2026">
             <img src="assets/perception.jpg" alt="Perception book cover" loading="lazy">
             <h4>Perception</h4>
             <p class="series-tag">Project Parallax — signed pre-order, ships after Dec 15, 2026</p>
             <div class="fmt">
-              <label><input type="radio" name="fmt-perception" value="paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
-              <label><input type="radio" name="fmt-perception" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+              <label><input type="radio" name="fmt-perception" value="Paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
+              <label><input type="radio" name="fmt-perception" value="Hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
             </div>
-            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+            <p class="price-line"><a class="btn order-btn" href="#order-form">Order signed copy</a></p>
           </article>
 
           <article class="signed-card coming-soon-card" data-book="Perspective">
@@ -190,7 +197,7 @@
       <div class="wrap narrow">
         <h2>How ordering works</h2>
         <ol class="steps" style="counter-reset: step; list-style: none; padding: 0;">
-          <li style="margin: 1rem 0;"><strong>1. Fill out the order form below</strong> — your name, shipping address, and personalization: who the book is for, what occasion it's for (if any), and anything you'd like written inside.</li>
+          <li style="margin: 1rem 0;"><strong>1. Pick your book and format, then click "Order signed copy"</strong> — the order form below will already have your book and format filled in. Then add your name, shipping address, and personalization: who the book is for, what occasion it's for (if any), and anything you'd like written inside.</li>
           <li style="margin: 1rem 0;"><strong>2. Pay with PayPal</strong> — I'll email you a payment link for the exact total (book price + shipping). PayPal checkout also accepts Google Pay and cards. US orders: book price + the shipping estimate. International orders: I'll email you the exact shipping quote first, then you pay.</li>
           <li style="margin: 1rem 0;"><strong>3. I order, personalize, sign &amp; send</strong> — your copy is ordered fresh, inscribed with your message, signed, and shipped. Please allow extra time — each one is done by hand.</li>
         </ol>
@@ -202,7 +209,7 @@
         <h2>Order form</h2>
         <p class="section-lede">Fill this out and I'll confirm your order and email you the PayPal payment link. US orders: book price + the Media Mail shipping estimate. International orders: I'll email you the exact shipping cost before you pay.</p>
         <!-- SIGNED-COPIES ORDER FORM (Google Form, created Nov 23, 2026; formId 1Jj8NfoO2msnN07HFCaf0nJAkZjqdVvXalweET9cfs1w). Responses go to the form owner. -->
-        <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSdVwAuXqk0A9uHa8GnAVnJyk9ulyJcs284RIxXLBe0xfBRRUg/viewform?embedded=true" title="Signed copy order form">Loading…</iframe>
+        <iframe class="form-embed" id="order-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdVwAuXqk0A9uHa8GnAVnJyk9ulyJcs284RIxXLBe0xfBRRUg/viewform?embedded=true" title="Signed copy order form">Loading…</iframe>
         <p class="note" style="text-align:center; margin-top:1.5rem;">Questions? Email <a href="mailto:sarahspotify3095@gmail.com">sarahspotify3095@gmail.com</a></p>
       </div>
     </section>
@@ -246,6 +253,27 @@
         var price = radio.getAttribute('data-price') || '';
         var slot = radio.closest('label').querySelector('[data-price-slot]');
         if (slot) slot.textContent = price ? '$' + price : 'price to be confirmed';
+      });
+    });
+    // "Order signed copy" prefills the embedded form with the card's book +
+    // the selected format, then scrolls to the form. Google Form entry IDs
+    // (verified Nov 23, 2026): book = entry.2133138706, format = entry.1768164836.
+    var FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdVwAuXqk0A9uHa8GnAVnJyk9ulyJcs284RIxXLBe0xfBRRUg/viewform?embedded=true';
+    document.querySelectorAll('.order-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var card = btn.closest('.signed-card');
+        if (!card) return;
+        var book = card.getAttribute('data-form-book') || '';
+        var checked = card.querySelector('input[type=radio]:checked');
+        var format = checked ? checked.value : 'Paperback';
+        var url = FORM_BASE
+          + '&entry.2133138706=' + encodeURIComponent(book)
+          + '&entry.1768164836=' + encodeURIComponent(format);
+        var iframe = document.getElementById('order-form-iframe');
+        if (iframe) iframe.src = url;
+        var formSection = document.getElementById('order-form');
+        if (formSection) formSection.scrollIntoView({ behavior: 'smooth' });
       });
     });
     document.getElementById('est-book').addEventListener('change', updateEstimate);
