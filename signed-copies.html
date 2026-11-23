@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signed Copies — SarahMae Stephens</title>
+  <meta name="description" content="Order a signed, personalized copy of a SarahMae Stephens book, direct from the author. Amazon price plus USPS Media Mail shipping.">
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    SIGNED COPIES — PRICES CONFIRMED Nov 23, 2026, from Sarah's KDP screenshots.
+    Amazon prices (sale price = signed-copy book price):
+      A Shadow From the South — Paperback $11.99, Hardcover $19.99
+      Rescuing the Light — Paperback $11.99, Hardcover $19.99
+      GodFire — Paperback $11.99, Hardcover $19.99
+      The Dacturian Princess (2nd Ed.) — Paperback $14.99, Hardcover $19.99
+      Perception — Paperback $14.99, Hardcover $19.99 (pre-order, ships after Dec 15, 2026)
+    All five have hardcovers at $19.99 (confirmed from KDP — the four older titles
+    DO have hardcover editions). This resolves the earlier retailer conflicts:
+    Rescuing the Light $11.99 (not SciFier's $18.62 RRP), Dacturian $14.99 (not $21.49).
+    Perception's prices were not findable anywhere else — these came from KDP.
+
+    PAYMENT — form-first flow (not on-site PayPal buttons). The customer orders via
+    the embedded Google Form; Sarah confirms the order and emails a PayPal payment
+    link (or invoice) for the exact total: book price + exact shipping. The customer
+    pays with PayPal, Google Pay, or a card. PayPal buttons were considered but a
+    fixed-amount button can't capture the variable shipping (weight/qty/destination),
+    so the exact-total invoice/link is the accurate method. The "Order signed copy"
+    buttons on the cards scroll to the order form.
+
+    SHIPPING ESTIMATOR — USPS Media Mail, Notice 123, Oct 4, 2026 rates (verified
+    Nov 23, 2026): 1 lb $4.39, 2 lb $5.13, 3 lb $5.86, 4 lb $6.60, 5 lb $7.34, then
+    +$0.73/$0.74 per lb. Weight only, no zones. Media Mail is US-only; international
+    orders are quoted by Sarah before payment (see the estimator note).
+    KDP author-copy print cost (for Sarah's margin, not shown to buyers): B&W paperback
+    6x9 groundwood $1.00 + $0.0114/page; B&W hardcover $5.65 + $0.012/page.
+    Perception is 390 pages, so its author copies run ~$5.45 paperback / ~$10.33 hardcover.
+  -->
+  <style>
+    .signed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.8rem; }
+    .signed-card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 1.2rem; }
+    .signed-card img { width: 100%; height: auto; display: block; aspect-ratio: 2 / 3; object-fit: cover; }
+    .signed-card h4 { font-size: 1.05rem; font-weight: 400; margin: 1rem 0.8rem 0.2rem; }
+    .signed-card .fmt { margin: 0.6rem 0.8rem; font-size: 0.92rem; color: #ddd3bf; }
+    .signed-card .fmt label { display: block; margin: 0.35rem 0; cursor: pointer; }
+    .signed-card .price-line { font-size: 1.15rem; margin: 0.5rem 0; }
+    .signed-card .price-line .tbd { color: var(--accent); font-style: italic; font-size: 0.95rem; }
+    .signed-card .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
+    .coming-soon-card { opacity: 0.75; }
+    .estimator { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1.6rem; max-width: 680px; margin: 0 auto; }
+    .estimator label { display: block; margin: 0.9rem 0 0.3rem; }
+    .estimator select, .estimator input { width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font-family: inherit; font-size: 1rem; }
+    .estimator .total { font-size: 1.4rem; margin-top: 1.2rem; }
+    .estimator .fineprint { font-size: 0.85rem; color: var(--muted); margin-top: 0.8rem; }
+    .order-fields { text-align: left; max-width: 680px; margin: 0 auto; }
+    .order-fields li { margin-bottom: 0.5rem; }
+    .form-embed { width: 100%; max-width: 700px; height: 1200px; border: 0; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">SarahMae Stephens</a>
+      <nav>
+        <a href="index.html#books">Books</a>
+        <a href="#signed">Signed Copies</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Direct From the Author</p>
+        <h1>Signed Copies</h1>
+        <p class="lede">A signed, personalized copy of any of my books — the Amazon price, plus exact USPS Media Mail shipping. I order your copy, write your personal message inside, sign it, and send it your way.</p>
+      </div>
+    </section>
+
+    <section id="signed" class="section">
+      <div class="wrap">
+        <h2>Choose your book</h2>
+        <p class="section-lede">Each copy is signed and personalized just for you. Tell me who it's for and what it's for in the order form below.</p>
+        <div class="signed-grid">
+
+          <article class="signed-card" data-book="A Shadow From the South">
+            <img src="assets/shadow.jpg" alt="A Shadow From the South book cover" loading="lazy">
+            <h4>A Shadow From the South</h4>
+            <p class="series-tag">Chronicles of the Fae</p>
+            <div class="fmt">
+              <label><input type="radio" name="fmt-shadow" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-shadow" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+            </div>
+            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+          </article>
+
+          <article class="signed-card" data-book="Rescuing the Light">
+            <img src="assets/rescuing.jpg" alt="Rescuing the Light book cover" loading="lazy">
+            <h4>Rescuing the Light</h4>
+            <p class="series-tag">Chronicles of the Fae</p>
+            <div class="fmt">
+              <label><input type="radio" name="fmt-rescuing" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-rescuing" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+            </div>
+            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+          </article>
+
+          <article class="signed-card" data-book="GodFire">
+            <img src="assets/godfire.jpg" alt="GodFire book cover" loading="lazy">
+            <h4>GodFire</h4>
+            <p class="series-tag">Chronicles of the Fae</p>
+            <div class="fmt">
+              <label><input type="radio" name="fmt-godfire" value="paperback" data-price="11.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$11.99</span></label>
+              <label><input type="radio" name="fmt-godfire" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+            </div>
+            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+          </article>
+
+          <article class="signed-card" data-book="The Dacturian Princess">
+            <img src="assets/dacturian.png" alt="The Dacturian Princess book cover" loading="lazy">
+            <h4>The Dacturian Princess</h4>
+            <p class="series-tag">Second Edition</p>
+            <div class="fmt">
+              <label><input type="radio" name="fmt-dacturian" value="paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
+              <label><input type="radio" name="fmt-dacturian" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+            </div>
+            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+          </article>
+
+          <article class="signed-card" data-book="Perception">
+            <img src="assets/perception.jpg" alt="Perception book cover" loading="lazy">
+            <h4>Perception</h4>
+            <p class="series-tag">Project Parallax — signed pre-order, ships after Dec 15, 2026</p>
+            <div class="fmt">
+              <label><input type="radio" name="fmt-perception" value="paperback" data-price="14.99" data-weight-lb="1" checked> Paperback — <span class="price" data-price-slot>$14.99</span></label>
+              <label><input type="radio" name="fmt-perception" value="hardcover" data-price="19.99" data-weight-lb="2"> Hardcover — <span class="price" data-price-slot>$19.99</span></label>
+            </div>
+            <p class="price-line"><a class="btn" href="#order-form">Order signed copy</a></p>
+          </article>
+
+          <article class="signed-card coming-soon-card" data-book="Perspective">
+            <h4 style="margin-top: 2rem;">Perspective</h4>
+            <p class="series-tag">Project Parallax, Book 2 — coming soon</p>
+            <p class="fmt">Signed copies will open once the book is finished. Check back soon.</p>
+          </article>
+
+          <article class="signed-card coming-soon-card" data-book="Collision">
+            <h4 style="margin-top: 2rem;">Collision</h4>
+            <p class="series-tag">Project Parallax, Book 3 — coming soon</p>
+            <p class="fmt">Signed copies will open once the book is finished. Check back soon.</p>
+          </article>
+
+        </div>
+        <p class="store-note">Signed copies are the Amazon price for the book, plus the shipping estimate below. No extra markup for the signature — it's my thank-you for reading.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap narrow">
+        <h2>Shipping estimator</h2>
+        <p class="section-lede">US shipping is USPS Media Mail — priced by weight only, the same to every US address. Pick a book and format above, then estimate here.</p>
+        <div class="estimator">
+          <label for="est-book">Book &amp; format</label>
+          <select id="est-book">
+            <option value="1" data-book="A Shadow From the South">A Shadow From the South — Paperback</option>
+            <option value="2" data-book="A Shadow From the South">A Shadow From the South — Hardcover</option>
+            <option value="1" data-book="Rescuing the Light">Rescuing the Light — Paperback</option>
+            <option value="2" data-book="Rescuing the Light">Rescuing the Light — Hardcover</option>
+            <option value="1" data-book="GodFire">GodFire — Paperback</option>
+            <option value="2" data-book="GodFire">GodFire — Hardcover</option>
+            <option value="1" data-book="The Dacturian Princess">The Dacturian Princess — Paperback</option>
+            <option value="2" data-book="The Dacturian Princess">The Dacturian Princess — Hardcover</option>
+            <option value="1" data-book="Perception">Perception — Paperback</option>
+            <option value="2" data-book="Perception">Perception — Hardcover</option>
+          </select>
+          <label for="est-qty">How many copies?</label>
+          <input id="est-qty" type="number" min="1" max="10" value="1">
+          <label for="est-dest">Where's it going?</label>
+          <select id="est-dest">
+            <option value="us">United States</option>
+            <option value="intl">Outside the United States</option>
+          </select>
+          <p class="total" id="est-result">Estimated shipping: —</p>
+          <p class="fineprint" id="est-note">Media Mail rates, USPS Notice 123, effective Oct 4, 2026. The estimate is based on packaged weight (about 1 lb per paperback, 2 lb per hardcover) and rounds any fraction of a pound up. If the actual postage comes in lower, the difference is refunded; if higher, I'll email you before shipping.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <h2>How ordering works</h2>
+        <ol class="steps" style="counter-reset: step; list-style: none; padding: 0;">
+          <li style="margin: 1rem 0;"><strong>1. Fill out the order form below</strong> — your name, shipping address, and personalization: who the book is for, what occasion it's for (if any), and anything you'd like written inside.</li>
+          <li style="margin: 1rem 0;"><strong>2. Pay with PayPal</strong> — I'll email you a payment link for the exact total (book price + shipping). PayPal checkout also accepts Google Pay and cards. US orders: book price + the shipping estimate. International orders: I'll email you the exact shipping quote first, then you pay.</li>
+          <li style="margin: 1rem 0;"><strong>3. I order, personalize, sign &amp; send</strong> — your copy is ordered fresh, inscribed with your message, signed, and shipped. Please allow extra time — each one is done by hand.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="order-form">
+      <div class="wrap narrow">
+        <h2>Order form</h2>
+        <p class="section-lede">Fill this out and I'll confirm your order and email you the PayPal payment link. US orders: book price + the Media Mail shipping estimate. International orders: I'll email you the exact shipping cost before you pay.</p>
+        <!-- SIGNED-COPIES ORDER FORM (Google Form, created Nov 23, 2026; formId 1Jj8NfoO2msnN07HFCaf0nJAkZjqdVvXalweET9cfs1w). Responses go to the form owner. -->
+        <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSdVwAuXqk0A9uHa8GnAVnJyk9ulyJcs284RIxXLBe0xfBRRUg/viewform?embedded=true" title="Signed copy order form">Loading…</iframe>
+        <p class="note" style="text-align:center; margin-top:1.5rem;">Questions? Email <a href="mailto:sarahspotify3095@gmail.com">sarahspotify3095@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 SarahMae Stephens. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // USPS Media Mail single-piece rates, Notice 123, effective Oct 4, 2026.
+    // Price by billable weight (fractions round up), no zones.
+    var MEDIA_MAIL = {1: 4.39, 2: 5.13, 3: 5.86, 4: 6.60, 5: 7.34, 6: 8.08, 7: 8.81, 8: 9.55, 9: 10.29, 10: 11.02};
+    function mediaMailRate(billableLb) {
+      if (MEDIA_MAIL[billableLb]) return MEDIA_MAIL[billableLb];
+      // Beyond 10 lb: +$0.74 per lb (alternating $0.73/$0.74 in the published table; $0.74 is the safe side).
+      return 11.02 + (billableLb - 10) * 0.74;
+    }
+    function updateEstimate() {
+      var book = document.getElementById('est-book');
+      var perCopyLb = parseInt(book.options[book.selectedIndex].value, 10);
+      var qty = Math.max(1, parseInt(document.getElementById('est-qty').value, 10) || 1);
+      var dest = document.getElementById('est-dest').value;
+      var result = document.getElementById('est-result');
+      var note = document.getElementById('est-note');
+      if (dest === 'intl') {
+        result.textContent = 'International shipping: quoted after you order';
+        note.textContent = 'Media Mail is US-only, so international postage depends on your country. Fill out the order form and I will email you the exact shipping cost before you pay — nothing is charged until you approve it.';
+        return;
+      }
+      var billable = Math.ceil(perCopyLb * qty);
+      var rate = mediaMailRate(billable);
+      result.textContent = 'Estimated shipping: $' + rate.toFixed(2) + ' (Media Mail, ' + billable + ' lb packaged)';
+      note.textContent = 'Media Mail rates, USPS Notice 123, effective Oct 4, 2026. The estimate is based on packaged weight (about 1 lb per paperback, 2 lb per hardcover) and rounds any fraction of a pound up. If the actual postage comes in lower, the difference is refunded; if higher, I will email you before shipping.';
+    }
+    // Format radios update the price shown in their own label.
+    document.querySelectorAll('.signed-card input[type=radio]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        var price = radio.getAttribute('data-price') || '';
+        var slot = radio.closest('label').querySelector('[data-price-slot]');
+        if (slot) slot.textContent = price ? '$' + price : 'price to be confirmed';
+      });
+    });
+    document.getElementById('est-book').addEventListener('change', updateEstimate);
+    document.getElementById('est-qty').addEventListener('input', updateEstimate);
+    document.getElementById('est-dest').addEventListener('change', updateEstimate);
+    updateEstimate();
+  </script>
+</body>
+</html>
